@@ -3,49 +3,60 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.io.*;
 
-
-class Student
+class StudyLog
 {
-    private String name;
-    private int marks;
-
-    public Student(String a , int b)
+    private LocalDate Date;
+    private String Subject;
+    private double Duration;
+    private String Description;
+   
+    public StudyLog(LocalDate a , String b ,double c , String d)
     {
-        this.name = a;
-        this.marks = b;
+        this.Date = a;
+        this.Subject = b;
+        this.Duration = c;
+        this.Description = d;
 
     }
 
-    public String getName()
+    public LocalDate getDate()
     {
-        return this.name;
-
+        return this.Date;
     }
 
-    public int getMarks()
+    public String getSubject()
     {
-        return this.marks;
+        return this.Subject;
     }
 
+    public double getDuration()
+    {
+        return this.Duration;
+    }
 
-    
+    public String getDescription()
+    {
+        return this.Description;
+    }
+
     @Override
     public String toString()
     {
-        return this.name+" : "+this.marks;
-
+        return Date+" | "+Subject+" | "+Duration+" | "+Description;
     }
-
-
-
 
 }
 
-class program894
+class program895
 {
     public static void main(String A[]) 
     { 
-       
+        
+         LocalDate lobj = LocalDate.now();
+
+         StudyLog sobj = new StudyLog(lobj," C programming",4.2,"Advanced pointer and array");
+         System.out.println(sobj);
+         
         
     }
 }
